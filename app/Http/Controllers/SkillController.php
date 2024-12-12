@@ -14,7 +14,7 @@ class SkillController extends Controller
     public function index()
     {
         $skills = Skill::all();
-        return view('skill.skill_list',compact('skills'));
+        return view('skill.index',compact('skills'));
     }
 
     /**
@@ -22,7 +22,7 @@ class SkillController extends Controller
      */
     public function create()
     {
-        return view('skill.add_skill');
+        return view('skill.create_skill');
     }
 
     /**
@@ -48,7 +48,7 @@ class SkillController extends Controller
      */
     public function edit(Skill $skill)
     {
-        return view('skill.update_skill',compact('skill'));
+        return view('skill.edit_skill',compact('skill'));
     }
 
     /**
@@ -58,7 +58,6 @@ class SkillController extends Controller
     {
         $validate = $skillRequest->validated();
         $skill->update($validate);
-
         return redirect()->route('skill.index')->with('success', 'Skill updated successfully');
     }
 

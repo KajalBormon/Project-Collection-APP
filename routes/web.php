@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-/* --------Many to Many Crud--------- */
+/* -----------Many to Many Crud--------- */
 
 Route::resource('/skill',SkillController::class);
 

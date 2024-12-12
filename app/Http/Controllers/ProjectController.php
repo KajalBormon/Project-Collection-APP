@@ -15,7 +15,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        return view('project.project_list',compact('projects'));
+        return view('project.index',compact('projects'));
     }
 
     /**
@@ -24,7 +24,7 @@ class ProjectController extends Controller
     public function create()
     {
         $skills = Skill::all();
-        return view('project.add_project',compact('skills'));
+        return view('project.create_project',compact('skills'));
     }
 
     /**
@@ -54,7 +54,7 @@ class ProjectController extends Controller
     public function edit(Project $project, Skill $skill)
     {
         $skills = Skill::all();
-        return view('project.update_project',compact('project','skills'));
+        return view('project.edit_project',compact('project','skills'));
     }
 
     /**
